@@ -3,11 +3,14 @@
     ViewData["Title"] = "Index";
 }
 
+
 <h1 class="mb-4">Lista de Tarefas</h1>
+
 
 <p>
     <a href="/Tarefa/Create" class="btn btn-success text-white">Novo</a>
 </p>
+
 
 <table class="table table-striped table-hover">
     <thead class="table-dark">
@@ -46,14 +49,14 @@
                         Delete
                     </button>
 
+
                 </td>
             </tr>
         }
     </tbody>
-
 </table>
 
-<!-- Modal de Confirmação de Exclusão -->
+
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -76,6 +79,9 @@
     </div>
 </div>
 
+
+
+
 @section Scripts {
     <script>
         // Captura o evento de abertura do modal e preenche os dados dinamicamente
@@ -85,8 +91,10 @@
             var id = button.getAttribute('data-id');
             var descricao = button.getAttribute('data-descricao');
 
+
             var modalDescricaoSpan = deleteModal.querySelector('#tarefaDescricao');
             modalDescricaoSpan.textContent = descricao;
+
 
             var deleteForm = deleteModal.querySelector('#deleteForm');
             deleteForm.action = '/Tarefa/Delete/' + id;
